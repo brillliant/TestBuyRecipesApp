@@ -1,0 +1,16 @@
+### Get recipes
+GET http://localhost:8080/recipes
+
+### Get carts
+GET http://localhost:8080/carts/1234
+
+### Add recipe
+POST http://localhost:8080/carts/111/add_recipe
+Content-Type: application/json
+
+{
+    "name": "SomeName"
+}
+
+### delete recipe
+DELETE http://localhost:8080/carts/222/recipes/33
