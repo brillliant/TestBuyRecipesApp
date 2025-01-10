@@ -1,5 +1,5 @@
 ### Get recipes
-GET http://localhost:8080/recipes
+GET http://localhost:8080/recipes?page=2
 
 ### Get carts
 GET http://localhost:8080/carts/1234

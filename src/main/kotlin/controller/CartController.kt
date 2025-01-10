@@ -1,19 +1,20 @@
 package com.my.buyrecipes.controller
 
+import com.my.buyrecipes.controller.dto.RecipeDto
 import org.springframework.web.bind.annotation.*
 
-@RestController
-@RequestMapping("/")
+@RestController("/carts")
+//@RequestMapping("/")
 class CartController {
 
-    @GetMapping("/carts/{id}")
+    @GetMapping("/{id}")
     fun getCartById(
         @PathVariable("id") cartId: String,
     ) : String {
         return "cart $cartId"
     }
 
-    @PostMapping("/carts/{cartId}/add_recipe")
+    @PostMapping("/{cartId}/add_recipe")
     fun addRecipe(
         @PathVariable("cartId") cartId: String,
         @RequestBody recipeDto: RecipeDto,
@@ -21,17 +22,12 @@ class CartController {
         return "cart ${recipeDto.name}"
     }
 
-    @DeleteMapping("/carts/{cartId}/recipes/{recipeId}")
+    @DeleteMapping("/{cartId}/recipes/{recipeId}")
     fun deleteRecipe(
         @PathVariable("cartId") cartId: String,
         @PathVariable("recipeId") recipeId: String,
     ) : String {
         return "cartId $cartId, recipeId $recipeId"
     }
-
-    data class RecipeDto (
-        val name: String
-    )
-
 }
 
