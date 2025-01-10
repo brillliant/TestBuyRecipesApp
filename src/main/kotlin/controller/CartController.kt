@@ -1,17 +1,21 @@
 package com.my.buyrecipes.controller
 
+import com.my.buyrecipes.controller.dto.CartDto
 import com.my.buyrecipes.controller.dto.RecipeDto
+import com.my.buyrecipes.repository.CartRepository
+import com.my.buyrecipes.service.CartService
 import org.springframework.web.bind.annotation.*
 
-@RestController("/carts")
-//@RequestMapping("/")
-class CartController {
-
+@RestController
+@RequestMapping("/carts")
+class CartController(
+    val cartService: CartService
+) {
     @GetMapping("/{id}")
     fun getCartById(
-        @PathVariable("id") cartId: String,
-    ) : String {
-        return "cart $cartId"
+        @PathVariable("id") cartId: Int,
+    ) : CartDto {
+        return cartService.getById(cartId)
     }
 
     @PostMapping("/{cartId}/add_recipe")
