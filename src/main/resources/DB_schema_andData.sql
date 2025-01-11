@@ -55,19 +55,6 @@ INSERT INTO `cart_item` (`id`, `cart_id`, `product_id`, `recipe_id`) VALUES
 	(3, 2, 3, 1),
 	(4, 2, 4, 1);
 
--- Дамп структуры для таблица recipedb.cart_recipe
-CREATE TABLE IF NOT EXISTS `cart_recipe` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `cart_id` int NOT NULL,
-  `recipe_id` int NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- Дамп данных таблицы recipedb.cart_recipe: ~0 rows (приблизительно)
-DELETE FROM `cart_recipe`;
-INSERT INTO `cart_recipe` (`id`, `cart_id`, `recipe_id`) VALUES
-	(1, 1, 1);
-
 -- Дамп структуры для таблица recipedb.product
 CREATE TABLE IF NOT EXISTS `product` (
   `id` int NOT NULL AUTO_INCREMENT,
