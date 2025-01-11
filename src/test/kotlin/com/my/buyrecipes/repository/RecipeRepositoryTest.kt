@@ -14,21 +14,12 @@ class RecipeRepositoryTest {
     @Autowired
     private lateinit var recipeRepository: RecipeRepository
 
-/*    @Test
-    fun `test get name of recipe`() {
-        val recipe = Recipe(id = 1, name = "Pizza"*//*, products = emptySet()*//*)
-        //recipeRepository.save(recipe)
-
-        val retrievedRecipe = recipeRepository.findById(1).orElseThrow()
-        assertEquals("name1", retrievedRecipe.name)
-    }*/
-
     @Test
     fun `test get all`() {
-        val recipe = Recipe(id = 0, name = "Pizza555"/*, products = emptySet()*/)
+        val recipe = Recipe(id = 0, name = "Pizza555")
         recipeRepository.save(recipe)
 
-        val recipe2 = Recipe(id = 0, name = "Pizza2"/*, products = emptySet()*/)
+        val recipe2 = Recipe(id = 0, name = "Pizza2")
         recipeRepository.save(recipe2)
 
         val retrievedRecipes = recipeRepository.findAll()

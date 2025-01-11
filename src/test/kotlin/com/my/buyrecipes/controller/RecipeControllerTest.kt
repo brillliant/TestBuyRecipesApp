@@ -1,5 +1,6 @@
 package com.my.buyrecipes.controller
 
+import com.my.buyrecipes.controller.dto.ProductDto
 import com.my.buyrecipes.controller.dto.RecipeDto
 import com.my.buyrecipes.service.RecipeService
 import io.mockk.every
@@ -19,8 +20,30 @@ class RecipeControllerTest (
     @Test
     fun `getAllRecipes should return recipes with default page index`() {
         val recipes = listOf(
-            RecipeDto(id = 1, name = "Recipe 1"),
-            RecipeDto(id = 2, name = "Recipe 2")
+            RecipeDto(id = 1, name = "Recipe 1", products =
+                mutableListOf(
+                    ProductDto(
+                        id = 1,
+                        name = "product1"
+                    ),
+                    ProductDto(
+                        id = 2,
+                        name = "product2"
+                    )
+                )
+            ),
+            RecipeDto(id = 2, name = "Recipe 2", products =
+                mutableListOf(
+                    ProductDto(
+                        id = 3,
+                        name = "product3"
+                    ),
+                    ProductDto(
+                        id = 4,
+                        name = "product4"
+                    )
+                )
+            )
         )
         every { recipeService.getAll(0) } returns recipes
 

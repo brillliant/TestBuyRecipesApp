@@ -1,7 +1,6 @@
 package com.my.buyrecipes.controller.dto
 
-data class RecipeDto (
+class ProductDto (
     val id: Int,
     val name: String,
-    val products: List<ProductDto>
 )
